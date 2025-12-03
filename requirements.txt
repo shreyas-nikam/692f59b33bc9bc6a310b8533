@@ -1,9 +1,6 @@
-streamlit
-numpy
 pandas
+numpy
+networkx
 matplotlib
 seaborn
-scikit-learn
-torch
-torchvision
-skimage
+streamlit
