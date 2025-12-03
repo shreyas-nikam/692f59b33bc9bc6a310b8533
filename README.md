@@ -1,64 +1,41 @@
-# QuLab: AI Risk Scenario Simulator
+Here's a comprehensive `README.md` file for your Streamlit application lab project.
 
-![QuLab Logo](https://www.quantuniversity.com/assets/img/logo5.jpg)
+---
 
-## Project Title and Description
+# QuLab: AI-BOM Risk Navigator
 
-**QuLab: AI Risk Scenario Simulator** is an interactive Streamlit application designed as an educational and simulation platform for **Risk Managers** and AI practitioners. It aims to demystify AI security vulnerabilities and demonstrate the effectiveness of various mitigation strategies in an approachable, hands-on manner.
+## Project Title
 
-The application allows users to simulate three prevalent AI attack vectors: Data Poisoning, Adversarial Examples, and Prompt Injection. For each scenario, users can observe the attack's impact on AI model performance or safety, quantify the associated risks using a simple yet effective risk scoring model, and then apply and evaluate mitigation techniques. All simulated scenarios and their outcomes are logged in a persistent AI Risk Register for comprehensive review and analysis.
+**AI-BOM Risk Navigator: Interactive AI Supply Chain Risk Management**
 
-### Learning Goals
+## Project Description
 
-Upon using this application, users will be able to:
+The **AI-BOM Risk Navigator** is an interactive Streamlit application developed as part of the QuLab initiative. It provides a powerful, visual, and data-driven platform for Risk Managers to explore and assess risks within complex AI system supply chains. Leveraging the concept of an AI Bill of Materials (AI-BOM), the application demonstrates how to inventory AI components, understand their interdependencies, identify vulnerabilities, and simulate the cascading impact of compromised elements.
 
-*   **Identify and Differentiate**: Understand the distinct characteristics and mechanisms of Data Poisoning, Adversarial Examples, and Prompt Injection attacks.
-*   **Quantify Risk**: Apply a defined risk score model to quantify the potential impact and likelihood of AI-related risks.
-*   **Evaluate Mitigations**: Assess the effectiveness of common defense strategies (e.g., Data Sanitization, Adversarial Training, Safety Alignment/Input Filtering) in reducing identified AI risks.
-*   **Document and Analyze**: Utilize a persistent AI Risk Register to document simulated vulnerabilities, proposed solutions, and their performance/safety implications.
-
-### Introduction to AI Risk Simulation
-
-Artificial Intelligence (AI) systems, while revolutionary, introduce unique security risks that must be understood and managed for their safe and responsible deployment. This lab project focuses on demonstrating and analyzing three critical AI attack vectors:
-
-1.  **Data Poisoning**: Involves injecting malicious data into a model's training dataset to manipulate its behavior, leading to incorrect associations or degraded performance.
-2.  **Adversarial Examples**: Specially crafted inputs (often imperceptible to humans) designed to cause an AI model to make a wrong classification or prediction.
-3.  **Prompt Injection**: Attacks specifically targeting Large Language Models (LLMs) by crafting inputs that override system instructions, bypass safety guidelines, or extract sensitive information.
-
-**Risk Quantification Model:**
-The core formula for risk quantification used throughout this application is:
-$$
-Risk = P(Event) \times M(Consequence)
-$$
-Where:
-*   $P(Event)$ represents the probability of an attack succeeding.
-*   $M(Consequence)$ denotes the magnitude of harm (e.g., financial loss, data breach severity).
-
-Both $P$ and $M$ are qualitatively defined (e.g., 'Low', 'Medium', 'High') and mapped to numerical scales (1-5 for calculation).
-
-**Risk Level Mapping:**
-*   **Low Risk**: Score 1-5
-*   **Medium Risk**: Score 6-15
-*   **High Risk**: Score 16-25
+This lab project aims to demystify AI risk management by offering a hands-on experience in generating, visualizing, and analyzing synthetic AI-BOM data. Users can configure AI systems, calculate component and system-wide risks, and run simulations to understand vulnerability propagation, making it an invaluable tool for learning and practical application in AI governance and security.
 
 ## Features
 
-*   **Interactive Attack Simulations**:
-    *   **Data Poisoning**: Simulate poisoning a CNN's training data to misclassify images, with adjustable poisoning rates.
-    *   **Adversarial Examples**: Generate adversarial images for a CNN using adjustable epsilon values, demonstrating misclassification with imperceptible changes.
-    *   **Prompt Injection**: Test a simplified LLM against safe and malicious prompts, including custom user inputs, to expose vulnerabilities.
-*   **Dynamic Risk Assessment**: Qualitatively define and numerically calculate initial, post-attack, and mitigated risk scores based on $P(Event)$ and $M(Consequence)$.
-*   **Mitigation Strategy Demonstration**:
-    *   **Data Sanitization**: Apply simulated data cleaning to counter data poisoning attacks.
-    *   **Adversarial Training**: Re-train a model with adversarial examples to enhance robustness.
-    *   **Safety Alignment/Input Filtering**: Implement keyword-based filtering to prevent prompt injection in LLMs.
-*   **Performance Visualization**: Visualize the impact of attacks and effectiveness of mitigations using interactive bar charts for model accuracy or safety scores.
-*   **Persistent AI Risk Register**: Automatically logs details of each simulated scenario, including attack type, description, risk scores (initial, post-attack, mitigated), mitigation applied, and performance impact/recovery metrics.
-*   **User-Friendly Interface**: Built with Streamlit for an intuitive and responsive web application experience.
+The AI-BOM Risk Navigator offers the following key functionalities:
+
+*   **Introduction to AI-BOM**: A foundational overview of what an AI Bill of Materials is and its critical role in AI risk management.
+*   **Synthetic AI-BOM Generation**: Dynamically generate a synthetic AI-BOM dataset with configurable numbers of components and dependencies, featuring various component types, origins, versions, vulnerabilities, and licensing info.
+*   **AI-BOM Data Details**: View the generated AI-BOM as a DataFrame, inspect its structure, data types, and descriptive statistics.
+*   **Initial Dependency Visualization**: Visualize the AI system's architecture as a directed graph, showing components (nodes) and their interdependencies (edges), color-coded by component type.
+*   **Vulnerability Scoring Explanation**: Understand the concept of vulnerability scoring (simplified CVSS-like scores) and its application in AI-BOM.
+*   **Individual Component Risk Calculation**: Calculate and display a risk score for each AI component based on attributes like known vulnerabilities and origin (e.g., third-party).
+*   **Component Risk Profiles**: Generate human-readable risk profiles for selected components, summarizing their risk-relevant attributes and calculated scores.
+*   **Overall AI System Risk Aggregation**: Compute an aggregated overall risk score for the entire AI system, considering both individual component risks and their interdependencies (weighted by out-degree).
+*   **Vulnerability Simulation**: Simulate a critical vulnerability in a chosen component and observe how its impact propagates through direct and indirect dependencies.
+*   **Vulnerability Propagation Visualization**: Visually demonstrate the cascading effects of a simulated vulnerability, with nodes re-colored and sized based on their updated risk scores.
+*   **Targeted Risk Analysis**:
+    *   Assess **Data Provenance and Integrity Risks** by filtering and analyzing 'Data' type components.
+    *   Evaluate **Third-Party Component Risks** by focusing on components from external vendors or open-source origins.
+    *   Identify **Top and Bottom N Risk Components** to prioritize mitigation efforts.
 
 ## Getting Started
 
-Follow these instructions to set up and run the QuLab application on your local machine.
+Follow these instructions to get a copy of the project up and running on your local machine.
 
 ### Prerequisites
 
@@ -70,38 +47,32 @@ Follow these instructions to set up and run the QuLab application on your local 
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/quolab-ai-risk-simulator.git
-    cd quolab-ai-risk-simulator
+    git clone https://github.com/your-username/ai-bom-risk-navigator.git
+    cd ai-bom-risk-navigator
     ```
 
-    *(Note: Replace `your-username/quolab-ai-risk-simulator.git` with the actual repository URL if this is hosted.)*
+    *(Note: Replace `https://github.com/your-username/ai-bom-risk-navigator.git` with the actual repository URL.)*
 
 2.  **Create a virtual environment (recommended):**
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    python -m venv .venv
+    source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
     ```
 
-3.  **Install dependencies:**
-    The application relies on several Python libraries. It's recommended to install them using a `requirements.txt` file.
-
-    First, create a `requirements.txt` file in the root directory of the project with the following content:
+3.  **Install the required packages:**
+    Create a `requirements.txt` file in the root directory of the project with the following content:
 
     ```
-    streamlit==1.32.2
-    numpy==1.26.4
-    pandas==2.2.1
-    matplotlib==3.8.3
-    seaborn==0.13.2
-    scikit-learn==1.4.1.post1
-    torch==2.2.1
-    torchvision==0.17.1
-    scikit-image==0.22.0
+    streamlit>=1.0.0
+    pandas>=1.3.0
+    numpy>=1.21.0
+    networkx>=2.6.0
+    matplotlib>=3.4.0
+    seaborn>=0.11.0
     ```
-    *(Note: These versions are specified for reproducibility. You might use slightly newer versions, but compatibility should be checked.)*
 
-    Then, install the dependencies:
+    Then install:
 
     ```bash
     pip install -r requirements.txt
@@ -111,74 +82,78 @@ Follow these instructions to set up and run the QuLab application on your local 
 
 1.  **Run the Streamlit application:**
 
-    Navigate to the project's root directory in your terminal (if you're not already there) and run:
-
     ```bash
     streamlit run app.py
     ```
 
-2.  **Access the application:**
-    Your web browser will automatically open to `http://localhost:8501` (or another port if 8501 is in use), displaying the QuLab application.
+2.  Your web browser should automatically open to the Streamlit application (usually `http://localhost:8501`).
 
-3.  **Navigate Scenarios:**
-    Use the sidebar to switch between different AI attack vector simulations: "Data Poisoning", "Adversarial Examples", and "Prompt Injection".
+3.  **Explore the Application:**
+    *   **Sidebar Controls**:
+        *   **Generate AI-BOM Dataset**: Use the sliders in the sidebar to configure the "Number of Components" and "Number of Dependencies". Click "Generate AI-BOM" to create a synthetic dataset and initialize the AI system graph. This is the first step to interact with the application.
+        *   **Simulate Vulnerability**: Once an AI-BOM is generated, select a "Vulnerable Component ID" from the dropdown and set a "Base Impact Score". Click "Run Vulnerability Simulation" to see the propagation of risk.
+    *   **Navigation**: Use the "Navigation" selectbox in the sidebar to switch between different sections of the lab project:
+        *   **Introduction**: Learn about AI-BOMs.
+        *   **AI-BOM Details**: View the generated dataset and component attributes.
+        *   **Initial Dependencies**: See the initial graph visualization of the AI system.
+        *   **Component Risk Profile**: Explore vulnerability scoring, individual component risks, and overall system risk.
+        *   **Vulnerability Impact**: Observe the visualization of a simulated vulnerability's propagation.
+        *   **Targeted Risk Analysis**: Conduct specific analyses on data provenance, third-party components, and identify top/bottom risk components.
 
-4.  **Run Simulations:**
-    *   For each scenario, observe the baseline performance of the AI system.
-    *   Adjust attack parameters (e.g., "Poisoning Rate", "Epsilon", custom malicious prompts).
-    *   Set initial qualitative risk levels ($P(Event)$, $M(Consequence)$).
-    *   Click the "Run [Attack Type] Scenario" button to execute the attack simulation and observe its impact on performance/safety and the updated risk score.
-    *   (Optional) Adjust mitigation parameters (e.g., "Detection Threshold").
-    *   Set mitigated qualitative risk levels.
-    *   Click "Apply [Mitigation Strategy]" to see how the defenses improve the system and reduce risk.
-
-5.  **Review Risk Register:**
-    Scroll to the bottom of the main page to view the "AI Risk Register", which logs all your simulated scenarios and their outcomes.
+The application leverages Streamlit's `st.session_state` to maintain the generated AI-BOM data and graph across different pages and interactions, ensuring a consistent user experience.
 
 ## Project Structure
 
 ```
 .
 ├── application_pages/
-│   ├── page_data_poisoning.py         # Streamlit page for Data Poisoning simulation
-│   ├── page_adversarial_examples.py   # Streamlit page for Adversarial Examples simulation
-│   └── page_prompt_injection.py       # Streamlit page for Prompt Injection simulation
-├── app.py                             # Main Streamlit application, navigation, and risk register
-├── utils.py                           # Core utility functions (risk calcs, model defs, attack/mitigation logic)
-└── requirements.txt                   # List of Python dependencies
+│   ├── page_1_introduction.py            # Introduction to AI-BOM concept
+│   ├── page_2_ai_bom_details.py          # Synthetic AI-BOM generation and data display
+│   ├── page_3_initial_dependencies.py    # Initial AI system dependency visualization
+│   ├── page_4_component_risk_profile.py  # Vulnerability scoring, component & overall risk calculation
+│   ├── page_5_vulnerability_impact.py    # Vulnerability simulation and impact visualization
+│   └── page_6_targeted_risk_analysis.py  # Data provenance, third-party, and top/bottom N risk analysis
+├── app.py                                # Main Streamlit application file, orchestrates pages and functions
+├── requirements.txt                      # List of Python dependencies
+└── README.md                             # Project README file
 ```
+
+*   `app.py`: This is the main entry point for the Streamlit application. It handles session state initialization, sidebar controls for global actions (generate AI-BOM, simulate vulnerability), and navigates between different content pages. It also defines core functions like `generate_ai_bom_dataset`, `create_ai_system_graph`, `calculate_component_risk`, `aggregate_overall_ai_system_risk`, and `simulate_vulnerability_propagation`.
+*   `application_pages/`: This directory contains individual Python modules, each representing a distinct page or section of the Streamlit application. This modular structure helps organize the content and logic for different features.
 
 ## Technology Stack
 
-*   **Streamlit**: For creating interactive web applications with Python.
-*   **Python**: The core programming language.
-*   **NumPy**: For numerical operations, especially with array manipulation for image data.
-*   **Pandas**: For data handling and managing the AI Risk Register.
-*   **Matplotlib & Seaborn**: For generating data visualizations and performance charts.
-*   **scikit-learn**: For data splitting (`train_test_split`).
-*   **PyTorch**: For building, training, and evaluating the Convolutional Neural Network (CNN) models and generating adversarial examples.
-*   **scikit-image (skimage.draw)**: For generating synthetic image shapes (circles, rectangles, triangles).
+*   **Python 3.8+**: The core programming language.
+*   **Streamlit**: The open-source app framework used to build and deploy interactive web applications for machine learning and data science.
+*   **Pandas**: For data manipulation and analysis, primarily for managing the AI-BOM dataset (`ai_bom_df`).
+*   **NumPy**: Essential for numerical operations, often used implicitly by Pandas.
+*   **NetworkX**: A Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks (graphs). Used for representing AI system dependencies.
+*   **Matplotlib**: A comprehensive library for creating static, animated, and interactive visualizations in Python.
+*   **Seaborn**: A Python data visualization library based on matplotlib, providing a high-level interface for drawing attractive and informative statistical graphics.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions for new features, improvements, or bug fixes, please feel free to:
+Contributions to the AI-BOM Risk Navigator are welcome! If you have suggestions for improvements, bug fixes, or new features, please feel free to:
 
 1.  Fork the repository.
-2.  Create a new branch (`git checkout -b feature/AmazingFeature`).
-3.  Make your changes.
-4.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-5.  Push to the branch (`git push origin feature/AmazingFeature`).
-6.  Open a Pull Request.
+2.  Create a new branch for your feature or bug fix (`git checkout -b feature/your-feature-name`).
+3.  Commit your changes (`git commit -m 'Add new feature'`).
+4.  Push to the branch (`git push origin feature/your-feature-name`).
+5.  Open a Pull Request.
+
+Please ensure your code adheres to good practices and includes appropriate documentation and tests where applicable.
 
 ## License
 
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-*(Note: You will need to create a `LICENSE` file in your repository if you haven't already.)*
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+*(Note: You might need to create a `LICENSE` file in your repository with the MIT license text.)*
 
 ## Contact
 
-For any questions or feedback, please reach out:
+For questions, feedback, or support related to this project, please contact:
 
-*   **Project Maintainer**: Your Name / Organization Name
-*   **Email**: your.email@example.com
-*   **Website**: [https://www.quantuniversity.com](https://www.quantuniversity.com) (as seen in the logo)
+*   **Organization**: QuantUniversity (QuLab)
+*   **Email**: info@quantuniversity.com
+*   **Website**: [https://www.quantuniversity.com](https://www.quantuniversity.com)
+
+---
