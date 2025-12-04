@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 
 # Import functions from utils
 from utils import calculate_component_risk_aibom as calculate_component_risk, get_component_risk_profile, aggregate_overall_ai_system_risk

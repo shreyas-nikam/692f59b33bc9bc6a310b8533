@@ -1,18 +1,9 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 import seaborn as sns
-import io
 
-# Import AI-BOM functions from utils
-from utils import (
-    generate_ai_bom_dataset,
-    create_ai_system_graph,
-    calculate_component_risk_aibom as calculate_component_risk,
-    simulate_vulnerability_propagation
-)
 
 # Configure plot styles for better readability (will be applied once at app start)
 sns.set_style("whitegrid")
@@ -25,7 +16,7 @@ plt.rcParams["figure.dpi"] = 100
 st.set_page_config(page_title="QuLab", layout="wide")
 st.sidebar.image("https://www.quantuniversity.com/assets/img/logo5.jpg")
 st.sidebar.divider()
-st.title("QuLab")
+st.title("QuLab: AI-BOM Risk Navigator")
 st.divider()
 st.markdown("""
 In this lab, the **AI-BOM Risk Navigator** is an interactive Streamlit application designed for Risk Managers to explore and assess risks within AI system supply chains. It provides a visual and data-driven approach to understanding component dependencies, identifying vulnerabilities, and simulating the cascading impact of compromised elements.
