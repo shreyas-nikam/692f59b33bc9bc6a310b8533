@@ -4,3 +4,4 @@ networkx
 matplotlib
 seaborn
 streamlit
+scikit-learn
